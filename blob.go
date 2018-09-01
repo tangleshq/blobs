@@ -29,10 +29,9 @@ type Blob struct {
 // SHA256 of the blob, and the reader that the blob may be obtained
 // from.
 type IncomingBlob struct {
-	SHA256    string
-	Data      io.ReadCloser
-	Extension string
-	CRC32C    uint32
+	SHA256 string
+	Data   io.ReadCloser
+	CRC32C uint32
 }
 
 // StreamingUpload reads a blob from data and writes it to the Storer in d without

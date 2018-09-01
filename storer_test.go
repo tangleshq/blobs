@@ -63,10 +63,9 @@ func TestUploadDownloadDelete(t *testing.T) {
 
 					buffer := bytes.NewBuffer(testcase.in.data)
 					result, err := StreamingUpload(ctx, deps, IncomingBlob{
-						SHA256:    testcase.in.sha256,
-						Data:      ioutil.NopCloser(buffer),
-						Extension: ".test",
-						CRC32C:    testcase.in.crc32c,
+						SHA256: testcase.in.sha256,
+						Data:   ioutil.NopCloser(buffer),
+						CRC32C: testcase.in.crc32c,
 					})
 					if err != testcase.out.err {
 						t.Errorf("Expected error to be %q, got %q", testcase.out.err, err)
